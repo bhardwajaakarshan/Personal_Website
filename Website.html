@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html ng-app="information">
+<head lang="en">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+    <script type="text/javascript" src="Information.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title> Aakarshan Bhardwaj </title>
+</head>
+
+<h2 style="font-family: Yu Mincho Light; text-align: center; font-size: 70px; font-weight:200 ;"><strong>Aakarshan
+    Bhardwaj</strong></h2>
+<a href="http://www.github.com/bhardwajaakarshan/">
+    <img src="http://qualityshepherd.com/images/icons/github.png"
+         style="position:absolute; top: 5px; left: 97%; width: 2%;">
+</a>
+<a href="http://www.linkedin.com/pub/aakarshan-bhardwaj/98/918/124">
+    <img src="http://theblogdesignernetwork.com/wp-content/uploads/2011/08/LinkedIn.png"
+         style="position:absolute; top:33px; left: 97%; width:2%;"/>
+</a>
+<a href="http://www.twitter.com/aashb22">
+    <img src="http://cdn.flaticon.com/png/256/8800.png"
+         style="position:absolute; top:61px; left: 97.3%; width:1.5%;"/>
+</a>
+
+<a href="" style="position:absolute; top:89px; left: 96%; width:1.5%;">Resume</a>
+
+<body ng-controller="ProjectController as project"
+      style="background-image: url('http://www.evolucia.com/wp-content/uploads/2014/04/light-gray-solid-color-background.jpg');">
+
+<p style="margin: 0.5% 0.5% 0.5% 0.5%; color: black; font-family: Yu Mincho Light;
+		 font-size:30px; text-align: center;">University of Maryland, College Park</p>
+
+<p style="margin: 0% 0.2% 0% 0%; color: black; font-family: Yu Mincho Light;
+		 font-size:25px; float:right; ">Expected: May 2018</p>
+
+<p style="margin: 0% 0.2% 0% 0%; color: black; font-family: Yu Mincho Light;
+		 font-size:25px;">Bachelor of Science Degree: Computer Science</p>
+
+<p style="clear:both; margin: 0% 0% 0% 0%;"></p>
+
+<p style="margin: 0% 0.2% 0% 0%; color: black; font-family: Yu Mincho Light;
+		 font-size:25px; float:right;">Junior by credit standing</p>
+
+<p style="margin: 0% 0.2% 0% 0%; color: black; font-family: Yu Mincho Light;
+		 font-size:25px;">Bachelor of Science Degree: Economics</p>
+
+<p style="clear:both; margin: 0% 0% 0% 0%;"></p>
+
+<hr style=" border-color: black; margin: 0.5% 0.5% 0.5% 0.5%;"/>
+
+<section ng-controller="TabController as tab">
+    <ul class="nav nav-pills black" ng-repeat="product in project.products">
+        <li ng-class="{ active:tab.isSet({{product.order}}) }">
+            <a href="" ng-click="tab.setTab({{product.order}})"
+               style="font-family: Yu Mincho Light;">{{product.name}}</a>
+        </li>
+        <div ng-show="tab.isSet({{product.order}})">
+            <img src="{{product.image}}" style="display: block; margin-left: auto; margin-right: auto; width:250px;"/>
+            <h1 style="font-family: Yu Mincho Light; font-size: 60; text-align: center;">{{product.welcome}}</h1>
+            <p style="text-align: center; font-family: Yu Mincho Light; font-size: 30px;">{{product.date}}</p>
+            <blockquote style="font-family: Yu Mincho Light; display: block; margin-left: auto; margin-right: auto; width: 700px;
+    word-wrap: break-word;">{{product.description}}
+            </blockquote>
+            <p style="text-align: center; font-family: Yu Mincho Light; font-size: 30px;">
+                <a href="{{product.view}}" ng-show="{{product.view}} !== null">View Project Here</a>
+            </p>
+        </div>
+    </ul>
+
+
+</section>
+</body>
+</html>
